@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        /* Simple styling for the registration page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .registration-container {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+        .registration-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            font-size: 14px;
+            display: block;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .input-group input:focus {
+            border-color: #5b9bd5;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5b9bd5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #4a8bb9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <h2>Register</h2>
+        <form action="/registration.in" method="POST">
+            <div class="input-group">
+                <label for="cName">Name:</label>
+                <input type="text" id="cName" name="cName" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="cEmail">Email:</label>
+                <input type="email" id="cEmail" name="cEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="cPhoneNumber">Phone Number:</label>
+                <input type="text" id="cPhoneNumber" name="cPhoneNumber" placeholder="Enter your phone number" required>
+            </div>
+            <div class="input-group">
+                <label for="cPassword">Password:</label>
+                <input type="password" id="cPassword" name="cPassword" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+		</br>
+		<a href="/www.ashokit.in">Login</a>
+		</br>
+		<p th:text="${msg3}"></p>
+    </div>
+
+</body>
+</html>

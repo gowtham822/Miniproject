@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            grid-gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .dashboard-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dashboard-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-card p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .dashboard-card .value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                grid-template-columns: 1fr; /* 1 column on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <div class="dashboard-card">
+            <h3>Total Enquires</h3>
+            <div class="value" th:text="${parameter.totalEnq}"></div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Open Enquires</h3>
+            <div class="value" th:text="${parameter.openEnq}"></div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Enrolled Enquires</h3>
+            <div class="value" th:text="${parameter.enrollEnq}"></div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Lost Enquires</h3>
+            <div class="value" th:text="${parameter. lostEnq}" ></div>
+        </div>
+		
+		<a href="/Logout">Logout</a>
+		
+		<a href="/addenq.in">Add Student Details</a>
+		
+    </div>
+         
+</body>
+</html>
